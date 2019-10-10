@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Message List</h1>
+<a href="/add">Add a Message</a><br />
+<table>
+    <tr>
+        <th>Comment   </th>
+        <th>     Posted Date   </th>
+        <th>Posted by    </th>
+        <td>    Actions</td>
+    </tr>
+    <tr th:each="message : ${messages}">
+        <td th:text="${message.content}"></td>
+        <td th:text="${message.posteddate}"></td>
+        <td th:text="${message.postedby}"></td>
+        <td>
+            <a th:href="@{/update/{id}(id=${message.id})}">Update</a>
+              <a th:href="@{/detail/{id}(id=${message.id})}">   Detail</a>
+                <a th:href="@{/delete/{id}(id=${message.id})}">   Delete</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
