@@ -28,6 +28,16 @@ public class Message {
     @Size(min=3)
     private String postedby;
 
+    public String getPic() {
+        return pic;
+    }
+
+    public void setPic(String pic) {
+        this.pic = pic;
+    }
+
+    private String pic;
+
 
     public long getId() {
         return id;

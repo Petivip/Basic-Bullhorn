@@ -17,13 +17,13 @@
     <span th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span><br /><br />
 
     Posted date: <label>
-    <input type="date" th:field="*{posteddate}" />
+    <input type="number" th:field="*{posteddate}" />
 </label>
     <span th:if="${#fields.hasErrors('posteddate')}" th:errors="*{posteddate}"></span><br /><br />
 
     Posted by: <input type="text" th:field="*{postedby}" />
     <span th:if="${#fields.hasErrors('postedby')}" th:errors="*{postedby}"></span><br /><br />
-
+    <input type="file" name="pic" /><br /><br />
     <input type="submit" value="Submit" />
 </form>
 <br /><br /><br /><br />

@@ -14,12 +14,14 @@
         <th>Comment   </th>
         <th>     Posted Date   </th>
         <th>Posted by    </th>
+        <th>Photos    </th>
         <td>    Actions</td>
     </tr>
     <tr th:each="message : ${messages}">
         <td th:text="${message.content}"></td>
         <td th:text="${message.posteddate}"></td>
         <td th:text="${message.postedby}"></td>
+        <td> <img th:src="${message.pic}"/></td>
         <td>
             <a th:href="@{/update/{id}(id=${message.id})}">Update</a>
               <a th:href="@{/detail/{id}(id=${message.id})}">   Detail</a>
