@@ -2,31 +2,15 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>contact us</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 <div th:replace="base::navlinks"></div><br/><br/><br/>
-<h1>Message List</h1>
-<a href="/add">Add a Message</a><br />
-<table>
-    <tr>
-        <th>Comment   </th>
-        <th>     Posted Date   </th>
-        <th>Posted by    </th>
-        <td>    Actions</td>
-    </tr>
-    <tr th:each="message : ${messages}">
-        <td th:text="${message.content}"></td>
-        <td th:text="${message.posteddate}"></td>
-        <td th:text="${message.postedby}"></td>
-        <td>
-            <a th:href="@{/update/{id}(id=${message.id})}">Update</a>
-              <a th:href="@{/detail/{id}(id=${message.id})}">   Detail</a>
-                <a th:href="@{/delete/{id}(id=${message.id})}">   Delete</a>
-        </td>
-    </tr>
-</table>
+<h1>Our Contact Information</h1><br /><br />
+<h3>Address: 20200 Observation Drive, Germantown, MD 20876 </h3><br />
+<h3>Phone: 208-364-7858</h3>
+
 <br /><br /><br /><br />
 <div th:replace="base::footer"></div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

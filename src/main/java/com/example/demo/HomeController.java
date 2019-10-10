@@ -22,6 +22,10 @@ public class HomeController {
         model.addAttribute("messages", messageRepository.findAll());
         return "list";
     }
+    @RequestMapping("/contact")
+    public String contact(){
+        return "contact";
+    }
 
     @GetMapping("/add")
     public String messageForm(Model model){
