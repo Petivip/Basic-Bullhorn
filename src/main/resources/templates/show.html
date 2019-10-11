@@ -1,18 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+    span{margin: 20px}
+</style>
 </head>
 <body style="width: 100%; background-color:#a2a39e">
 <div th:replace="base::navlinks"></div><br/><br/><br/>
-<a href="/">Show All Messages</a><br />
+<div style="padding-left: 60px">
+<a href="/list">Show All Messages</a><br />
 Comment:<span th:text="${message.content}"></span><br />
 Posted date:<span th:text="${message.posteddate}"></span><br />
 Posted by:<span th:text="${message.postedby}"></span><br /><br />
 
+
 <a th:href="@{/delete/{id}(id=${message.id})}">Delete this Message</a>
+</div>
 <br /><br /><br /><br />
 <div th:replace="base::footer"></div>
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
