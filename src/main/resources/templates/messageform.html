@@ -5,31 +5,43 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body style="width: 100%; background-color: #a7d4b3">
+<body  style="background-color: #a2a39e">
 <div th:replace="base::navlinks"></div><br/><br/><br/>
-<div style="padding-left: 100px">
-<h1>Message Form</h1>
-<form action="#" th:action="@{/process}" th:object="${message}" method="post">
-    <input type="hidden" th:field="*{id}" />
+<div style="width:90%;padding-left: 100px">
+<h1>Comment Form</h1>
+    <form action="#" th:action="@{/process}" th:object="${message}" method="post">
 
-    Comments :<label>
-    <textarea rows="5" style="width: 80vh " th:field="*{content}"></textarea>
-</label>
-    <span th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span><br /><br />
+            <input type="hidden" th:field="*{id}" />
 
-    Posted date: <label>
-    <input type="number" th:field="*{posteddate}" />
-</label>
-    <span th:if="${#fields.hasErrors('posteddate')}" th:errors="*{posteddate}"></span><br /><br />
 
-    Posted by: <input type="text" th:field="*{postedby}" />
-    <span th:if="${#fields.hasErrors('postedby')}" th:errors="*{postedby}"></span><br /><br />
-    <input type="file" name="pic" /><br /><br />
-    <input type="submit" value="Submit" />
-</form>
+        <div class="form-group">
+            <label for="comment">Comment:</label>
+            <textarea class="form-control" rows="3" id="comment"  th:field="*{content}"></textarea>
+            <small id="comment" class="form-text text-muted">Write your comments or compliant here</small>
+            <span th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span><br /><br />
+
+        </div>
+        <div class="form-group">
+            <label for="date">Posted date</label>
+            <input type="number" class="form-control" id="date" th:field="*{posteddate}" />
+            <span th:if="${#fields.hasErrors('posteddate')}" th:errors="*{posteddate}"></span><br /><br />
+        </div>
+        <div class="form-group">
+            <label for="post">Posted by</label>
+            <input class="form-control" type="text" id ="post" th:field="*{postedby}" />
+            <span th:if="${#fields.hasErrors('postedby')}" th:errors="*{postedby}"></span><br /><br />
+
+        </div>
+        <div class="form-group">
+            <label for="upload">Choose file</label>
+            <input class="form-control-file" type="file" name="pic" id="upload"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 </div>
 <br /><br /><br /><br />
 <div th:replace="base::footer"></div>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
