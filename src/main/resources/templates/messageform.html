@@ -5,14 +5,15 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body>
+<body style="width: 100%; background-color: #a7d4b3">
 <div th:replace="base::navlinks"></div><br/><br/><br/>
+<div style="padding-left: 100px">
 <h1>Message Form</h1>
 <form action="#" th:action="@{/process}" th:object="${message}" method="post">
     <input type="hidden" th:field="*{id}" />
 
     Comments :<label>
-    <textarea rows="5" th:field="*{content}"></textarea>
+    <textarea rows="5" style="width: 80vh " th:field="*{content}"></textarea>
 </label>
     <span th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span><br /><br />
 
@@ -26,6 +27,7 @@
     <input type="file" name="pic" /><br /><br />
     <input type="submit" value="Submit" />
 </form>
+</div>
 <br /><br /><br /><br />
 <div th:replace="base::footer"></div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

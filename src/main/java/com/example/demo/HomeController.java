@@ -22,7 +22,7 @@ public class HomeController {
     CloudinaryConfig cloudc;
 
 
-    @RequestMapping("/")
+    @RequestMapping("/list")
     public String listMessages(Model model){
         model.addAttribute("messages", messageRepository.findAll());
         return "list";
@@ -31,9 +31,10 @@ public class HomeController {
     public String contact(){
         return "contact";
     }
-    @RequestMapping("/home")
+
+    @RequestMapping("/")
     public String home(){
-        return "home";
+        return "Home";
     }
 
     @GetMapping("/add")
@@ -48,7 +49,7 @@ public class HomeController {
             return "messageform";
         }
         messageRepository.save(message);
-        return "redirect:/";
+        return "redirect:/list";
     }
 
     @RequestMapping("/detail/{id}")
@@ -64,7 +65,7 @@ public class HomeController {
     @RequestMapping("/delete/{id}")
     public String deletemessage(@PathVariable("id") long id){
         messageRepository.deleteById(id);
-        return "redirect:/";
+        return "redirect:/list";
     }
     @PostMapping("/add")
     public String processActor(@ModelAttribute Message message,
@@ -81,6 +82,6 @@ public class HomeController {
             e.printStackTrace();
             return "redirect:/add";
         }
-        return "redirect:/";
+        return "redirect:/list";
     }
 }
